@@ -27,23 +27,13 @@ body {
 
 /* Calligraphy animation video */
 .intro-video {
-  width: 400px; /* Adjust to fit your logo */
+  width: 900px; /* Adjust to fit your logo */
   height:auto;
   display: block;
   margin: 0 auto;
 }
 
-/* "Portfolio" text */
-.intro-text {
-  font-family: "Inter", sans-serif;
-  color: #727273;
-  font-size: 22px;
-  letter-spacing: 3px;
-  margin-top: 40px;
-  opacity: 0;
-  animation: fadeInText 1.5s ease forwards;
-  animation-delay: 2s; /* appears after your video starts */
-}
+
 
 /* Fade-in animations */
 @keyframes fadeIn {
