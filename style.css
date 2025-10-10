@@ -10,22 +10,25 @@ body {
   background-color: #F0F0F2;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center; /* centers vertically */
+  justify-content: center; /* centers horizontally */
   overflow: hidden;
 }
 
-/* Center container */
 .intro-container {
   text-align: center;
-  animation: fadeIn 1s ease-in forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-30px); /* optional small lift */
 }
+
 
 /* Calligraphy animation video */
 .intro-video {
   width: 400px; /* Adjust to fit your logo */
-  height: auto;
+  height:auto;
   display: block;
   margin: 0 auto;
 }
@@ -36,7 +39,7 @@ body {
   color: #727273;
   font-size: 22px;
   letter-spacing: 3px;
-  margin-top: 20px;
+  margin-top: 40px;
   opacity: 0;
   animation: fadeInText 1.5s ease forwards;
   animation-delay: 2s; /* appears after your video starts */
