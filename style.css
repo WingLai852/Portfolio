@@ -1,0 +1,63 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background */
+body {
+  background-color: #F0F0F2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Center container */
+.intro-container {
+  text-align: center;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Calligraphy animation video */
+.intro-video {
+  width: 400px; /* Adjust to fit your logo */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* "Portfolio" text */
+.intro-text {
+  font-family: "Inter", sans-serif;
+  color: #727273;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+  animation-delay: 2s; /* appears after your video starts */
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional fade-out before redirect */
+.fade-out {
+  animation: fadeOut 1s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
