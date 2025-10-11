@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Rocky Lai</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a3a2b23f2a.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 </head>
+
 <body>
-      <nav class="navbar">
+  <!-- NAVBAR -->
+  <nav class="navbar">
     <div class="navbar-logo">黎穎豪 Lai Wing Ho</div>
     <ul class="navbar-links">
       <li><a href="homepage.html">Home</a></li>
       <li><a href="about-me.html">About me</a></li>
       <li><a href="works.html">Works</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-text">
+        <h1>Let's Connect</h1>
+        <p>
+          Whether you have a question, want to collaborate, or just want to say hi —  
+          feel free to reach out. I'm always open to new ideas and conversations.
+        </p>
+
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:rockylai852@gmail.com">rockylai852@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com" target="_blank">linkedin.com/in/rockylai</a></p>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
