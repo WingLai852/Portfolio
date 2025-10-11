@@ -23,11 +23,34 @@
    <section class="slider">
     <button class="prev">&#10094;</button>
     <div class="slide-container">
-      <img src="Images/work1.jpg" alt="Work 1" class="slide active">
-      <img src="Images/work2.jpg" alt="Work 2" class="slide">
-      <img src="Images/work3.jpg" alt="Work 3" class="slide">
+      <img src="Images/poster-removebg-preview.png" alt="Work 1" class="slide active">
+      <img src="Images/me.png" alt="Work 2" class="slide">
     </div>
     <button class="next">&#10095;</button>
   </section>
+
+  <script>
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  next.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  prev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+</script>
+
 </body>
 </html>

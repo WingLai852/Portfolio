@@ -3,6 +3,11 @@ const REDIRECT_TARGET = 'homepage.html'; // path to your homepage
 const REDIRECT_DELAY_MS = 5300; // total time before redirect (in ms)
 const FADE_DURATION_MS = 1000; // fade-out duration (in ms)
 
+const slides = document.querySelectorAll(".slide");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+let index = 0;
+
 // Function to fade out smoothly
 function fadeOutPage() {
   document.body.classList.add('fade-out'); // triggers CSS animation
@@ -36,10 +41,6 @@ if (document.readyState === 'loading') {
   startRedirect();
 }
 
-const slides = document.querySelectorAll(".slide");
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
-let index = 0;
 
 function showSlide(i) {
   slides.forEach((slide, idx) => {
