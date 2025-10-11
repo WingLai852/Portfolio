@@ -1,7 +1,4 @@
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
+
 
 body {
   margin: 0;
@@ -76,6 +73,7 @@ font-family: 'Source Code Pro', monospace;
   letter-spacing: 0.5px;
 }
 
+
 /* ==== Right Side Image ==== */
 .main-image img {
   width: 480px;
@@ -87,6 +85,69 @@ font-family: 'Source Code Pro', monospace;
 /* Smooth fade transition before redirect */
 .fade-out {
   animation: fadeOut 1s ease forwards;
+}
+
+/* === MAIN CONTENT === */
+.main-content {
+  max-width: 600px;
+  margin-left: 100px; /* spacing from navbar edge */
+  margin-top: 140px;
+  line-height: 1.8;
+}
+
+.main-content h1 {
+  font-size: 36px;
+  color: #262321;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* === TEXT STYLING === */
+.main-content p {
+  font-size: 18px;
+  color: #727273;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Optional italic footer line like in your screenshot */
+.main-content p:last-of-type {
+  font-style: italic;
+  font-size: 14px;
+  color: #8C8C8C;
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+/* === BACKGROUND VIDEO === */
+video {
+  position: absolute;
+  top: 50%;
+  right: 12%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: auto;
+  opacity: 0.3; /* subtle tone */
+  pointer-events: none; /* prevent blocking clicks */
+  border-radius: 6px;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 900px) {
+  .main-content {
+    margin: 100px auto 0;
+    padding: 0 40px;
+    text-align: left;
+  }
+
+  video {
+    position: static;
+    display: block;
+    margin: 50px auto 0;
+    width: 80%;
+    transform: none;
+    opacity: 0.4;
+  }
 }
 
 @keyframes fadeOut {
