@@ -1,51 +1,18 @@
-/* Global reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ==== Navbar ==== */
 
-/* Page background */
 body {
-  background-color: #F0F0F2;
-  height: 100vh;
-  display: flex;
-  align-items: center; /* centers vertically */
-  justify-content: center; /* centers horizontally */
-  overflow: hidden;
   margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  background-color: #efefef;
+  font-family: 'Source Code Pro', monospace;
+  background: #F0F0F2;
   color: #222;
 }
-
-
-.intro-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-30px); /* optional small lift */
-}
-
-
-/* Calligraphy animation video */
-.intro-video {
-  width: 900px; /* Adjust to fit your logo */
-  height:auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* ==== Navbar ==== */
 .navbar {
+font-family: 'Source Code Pro', monospace;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px 70px 0 70px;
-  background: #efefef;
+  background: #F0F0F2;
 }
 
 .navbar-logo {
@@ -108,27 +75,20 @@ body {
 
 /* ==== Right Side Image ==== */
 .main-image img {
-  width: 380px;
+  width: 480px;
   height: auto;
   border-radius: 0;
   object-fit: cover;
 }
-/* Fade-in animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes fadeInText {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Optional fade-out before redirect */
+/* Smooth fade transition before redirect */
 .fade-out {
-  animation: fadeOut 1s ease-in forwards;
+  animation: fadeOut 1s ease forwards;
 }
 
 @keyframes fadeOut {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+    transform: scale(1.02); /* subtle zoom out effect */
+  }
 }
