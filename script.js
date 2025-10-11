@@ -13,6 +13,8 @@ function fadeOutPage() {
   document.body.classList.add('fade-out'); // triggers CSS animation
 }
 
+
+
 // Redirect after delay
 function startRedirect() {
   let remaining = Math.ceil(REDIRECT_DELAY_MS / 1000);
