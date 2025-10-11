@@ -35,3 +35,24 @@ if (document.readyState === 'loading') {
 } else {
   startRedirect();
 }
+
+const slides = document.querySelectorAll(".slide");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+let index = 0;
+
+function showSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.classList.toggle("active", idx === i);
+  });
+}
+
+next.addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+});
+
+prev.addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+});
