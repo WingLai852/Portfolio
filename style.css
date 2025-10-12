@@ -223,7 +223,7 @@ pointer-events: none; /* 👈 allows clicks to go through */
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  margin: 0; /* removes default spacing */
+  
 }
 
 .slide:hover .overlay p {
@@ -260,6 +260,25 @@ pointer-events: none; /* 👈 allows clicks to go through */
   gap: 80px;
   max-width: 1100px;
   width: 100%;
+}
+
+.download-cv {
+  margin-top: 20px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.cv-button:hover {
+  background-color: #444;
 }
 
 /* LEFT TEXT SIDE */
@@ -340,26 +359,6 @@ pointer-events: none; /* 👈 allows clicks to go through */
 .contact-form button:hover {
   background-color: #727273;
 }
-
-.download-cv {
-  margin-top: 20px;
-}
-
-.cv-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.cv-button:hover {
-  background-color: #444;
-}
-
 
 /* Responsive Design */
 @media (max-width: 900px) {
