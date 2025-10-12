@@ -341,6 +341,26 @@ pointer-events: none; /* 👈 allows clicks to go through */
   background-color: #727273;
 }
 
+.download-cv {
+  margin-top: 20px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.cv-button:hover {
+  background-color: #444;
+}
+
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .contact-container {
