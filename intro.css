@@ -7,19 +7,18 @@
 
 /* Page background */
 body {
-  background-color: #F0F0F2;
-  height: 100vh;
-  display: flex;
-  align-items: center; /* centers vertically */
-  justify-content: center; /* centers horizontally */
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
   background-color: #efefef;
   color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+  min-height: 100svh; /* safer on mobile than 100vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 16px; /* breathing room on small screens */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
 
 .intro-container {
   text-align: center;
@@ -27,18 +26,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateY(-30px); /* optional small lift */
+  transform: translateY(-20px);
+  width: 100%;
 }
-
 
 /* Calligraphy animation video */
 .intro-video {
-  width: 900px; /* Adjust to fit your logo */
-  height:auto;
+  width: min(90vw, 900px); /* responsive width with cap */
+  height: auto;
   display: block;
   margin: 0 auto;
 }
-
 
 /* Fade-in animations */
 @keyframes fadeIn {
@@ -58,4 +56,28 @@ body {
 
 @keyframes fadeOut {
   to { opacity: 0; }
+}
+
+/* Accessibility: reduce motion if preferred */
+@media (prefers-reduced-motion: reduce) {
+  .fade-out,
+  .intro-container,
+  .intro-video {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .intro-container {
+    transform: none;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1200px) {
+  .intro-video {
+    width: min(70vw, 1100px);
+  }
 }

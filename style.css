@@ -74,10 +74,10 @@ body {
 
 /* ==== IMAGE ==== */
 .main-image img {
-  width: 480px;
-  height: auto;
-  border-radius: 0;
-  object-fit: cover;
+    width: 500px;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
 }
 
 /* Smooth fade transition before redirect */
