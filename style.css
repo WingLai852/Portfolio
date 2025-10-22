@@ -550,3 +550,15 @@ pointer-events: none; /* 👈 allows clicks to go through */
     opacity: 0.4;
   }
 }
+
+@media (max-width: 768px) {
+  video.about-video {
+    position: static !important;
+    display: block;
+    margin: 40px auto 0;
+    width: 80%;
+    height: auto;
+    opacity: 0.6;
+    transform: none !important;
+  }
+}
