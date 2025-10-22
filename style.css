@@ -537,3 +537,16 @@ pointer-events: none; /* 👈 allows clicks to go through */
     transform: scale(1.02);
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .about-video {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 5%;
+    right: 5%;
+    width: 45vw;
+    max-width: 400px;
+    transform: none;
+    opacity: 0.4;
+  }
+}
