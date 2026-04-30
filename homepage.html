@@ -54,7 +54,7 @@ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')|
   gtag('config', 'G-HS47MHLFX9');
 </script>
 </head>
-<body>
+<body class="homepage">
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG3BFLNH"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -72,12 +72,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="main-section">
     <div class="main-text">
       <h1>黎穎豪</h1>
-      <h2>UI/UX developer</h2>
+      <h2><span id="dynamic-role">UI/UX developer</span><span class="role-cursor" aria-hidden="true"></span></h2>
       <p>Designing with simplicity, empathy, and purpose.</p>
+      <div class="home-actions">
+        <a class="home-btn primary" href="works-b.html">View Works</a>
+        <a class="home-btn" href="contact.html">Start a Project</a>
+      </div>
     </div>
     <div class="main-image">
       <img src="Images/IMG_4245-removebg-preview.png" alt="Profile photo">
     </div>
   </section>
+
+  <script>
+    (function () {
+      const section = document.querySelector('.homepage .main-section');
+      const portrait = document.querySelector('.homepage .main-image img');
+      const role = document.getElementById('dynamic-role');
+      if (!section || !portrait || !role) return;
+
+      section.classList.add('is-visible');
+
+      const roles = ['UI/UX developer', 'Frontend builder', 'Design-minded coder'];
+      let roleIndex = 0;
+      setInterval(function () {
+        role.classList.add('swap-out');
+        setTimeout(function () {
+          roleIndex = (roleIndex + 1) % roles.length;
+          role.textContent = roles[roleIndex];
+          role.classList.remove('swap-out');
+        }, 170);
+      }, 2800);
+
+      section.addEventListener('mousemove', function (event) {
+        const rect = section.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        section.style.setProperty('--spotlight-x', x + 'px');
+        section.style.setProperty('--spotlight-y', y + 'px');
+
+        const rotateY = ((x / rect.width) - 0.5) * 12;
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+        portrait.style.transform = 'rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale(1.03)';
+      });
+
+      section.addEventListener('mouseleave', function () {
+        section.style.setProperty('--spotlight-x', '50%');
+        section.style.setProperty('--spotlight-y', '50%');
+        portrait.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    })();
+  </script>
 </body>
 </html>

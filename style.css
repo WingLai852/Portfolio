@@ -5,6 +5,10 @@ body {
   color: #222;
 }
 
+.homepage {
+  background: #F0F0F2;
+}
+
 /* ==== NAVBAR ==== */
 .navbar {
   font-family: 'Source Code Pro', monospace;
@@ -43,10 +47,31 @@ body {
 
 /* ==== MAIN SECTION ==== */
 .main-section {
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 100px 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.homepage .main-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.homepage .main-section.is-visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .main-text {
@@ -72,12 +97,69 @@ body {
   letter-spacing: 0.5px;
 }
 
+.role-cursor {
+  display: inline-block;
+  width: 0.65ch;
+  height: 0.95em;
+  margin-left: 6px;
+  background: #6c6c6c;
+  vertical-align: middle;
+  animation: blinkCursor 0.9s step-end infinite;
+}
+
+#dynamic-role {
+  display: inline-block;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+#dynamic-role.swap-out {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.home-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #222;
+  text-decoration: none;
+  color: #222;
+  background: transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.home-btn.primary {
+  background: #222;
+  color: #F0F0F2;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(34, 34, 34, 0.15);
+}
+
+.home-btn.primary:hover {
+  background: #3b3b3b;
+}
+
 /* ==== IMAGE ==== */
 .main-image img {
     width: 500px;
     height: auto;
     border-radius: 0;
     object-fit: cover;
+  transform-style: preserve-3d;
+  transition: transform 0.22s ease;
 }
 
 /* Smooth fade transition before redirect */
@@ -587,6 +669,24 @@ pointer-events: none; /* 👈 allows clicks to go through */
   to {
     opacity: 0;
     transform: scale(1.02);
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-section,
+  .home-btn,
+  .main-image img,
+  #dynamic-role {
+    transition: none !important;
+  }
+
+  .role-cursor {
+    animation: none;
   }
 }
 
